@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  #root {
+    overflow: hidden;
+    padding: 30px 10px;
+  }
+  .layout-main {
+    justify-content: start;
+  }
+  .option {
+    width: 100px;
+    height: 100px;
+  }
+  .option-img {
+    padding: 20px;
+  }
+  .human-choose {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    flex-direction: column-reverse;
+  }
+  .human-choose-text {
+    position: absolute;
+    top: 150px;
+    left: -20px;
+  }
+  .computer-choose {
+    position: absolute;
+    top: 1%;
+  }
+  .computer-choose-text {
+    position: absolute;
+    top: 148px;
+    right: -120px;
+    white-space: nowrap;
+  }
+  .result {
+    margin-top: 35%;
+    margin-left: 20%;
+    gap: 25px;
+  }
+  .result h3 {
+    font-size: 50px;
+  }
+  .rules-main {
+    width: 90%;
+  }
+}

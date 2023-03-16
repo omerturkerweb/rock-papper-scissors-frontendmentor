@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+:root {
+  /* Primary Colors */
+  --scissors-gradient: to left, hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+  --paper-gradient: to left, hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+  --rock-gradient: to left, hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+  --lizard-gradient: to left, hsl(261, 73%, 60%), hsl(261, 72%, 63%);
+  --spock-gradient: to left, hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+  --white: rgb(255, 255, 255);
+  /* Neutral */
+
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+
+  /* Background */
+
+  --radial-gradient: to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+
+  /* Font */
+
+  --font-barlow: "Barlow Semi Condensed", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+  background-image: linear-gradient(var(--radial-gradient));
+  font-family: var(--font-barlow);
+  color: var(--white);
+  position: relative;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root.rules-on::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.534);
+  z-index: 40;
+}
+.dashboard-border {
+  border: 2px solid var(--header-outline);
+  border-radius: 15px;
+}
+.game {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.option {
+  border-radius: 80px;
+  width: 130px;
+  height: 130px;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.option:hover {
+  box-shadow: none;
+}
+.option-img {
+  z-index: 15;
+  padding: 10px;
+  user-select: none;
+}
+
+.option::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 80px;
+  width: 80%;
+  height: 80%;
+  transition: all 0.3s;
+}
+.option:hover::after {
+  box-shadow: inset 5px 4px 5px rgba(0, 0, 0, 0.479);
+}
+.option-rock {
+  background-image: linear-gradient(var(--rock-gradient));
+}
+
+.option-paper {
+  background-image: linear-gradient(var(--paper-gradient));
+}
+.option-scissors {
+  background-image: linear-gradient(var(--scissors-gradient));
+}
+.option-lizard {
+  background-image: linear-gradient(var(--lizard-gradient));
+}
+.option-spock {
+  background-image: linear-gradient(var(--spock-gradient));
+}
+.play-again-button {
+  border: 1px solid transparent;
+}
+.play-again-button:hover {
+  border: 1px solid white;
+}
+.win-side .option {
+  animation: shadow-pulse 3s infinite;
+}
+
+.win-side .house-option .option:nth-of-type(2) {
+  animation-delay: -1s;
+}
+.border-white {
+  border: 1px solid white;
+}
+
+.win-side .house-option .option:last-of-type {
+  animation-delay: -0.5s;
+}
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(105, 194, 245, 0.229);
+  }
+  100% {
+    box-shadow: 0 0 0 120px rgba(0, 119, 190, 0);
+  }
+}
